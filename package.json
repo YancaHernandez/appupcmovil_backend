@@ -18,8 +18,7 @@
         "test:e2e:watch": "jest --config ./test/jest-e2e.json --watch",
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-        "test:e2e": "jest --config ./test/jest-e2e.json",
-        "postinstall": "npm run prestart:prod"
+        "test:e2e": "jest --config ./test/jest-e2e.json"
     },
     "dependencies": {
         "@google-cloud/firestore": "^3.8.0",
