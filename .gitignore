@@ -389,4 +389,6 @@ Temporary Items
 # Local
 docker-compose.yml
 .env
+package-lock.json
+yarn.lock
 dist
