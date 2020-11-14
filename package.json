@@ -19,7 +19,7 @@
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./test/jest-e2e.json",
-        "postinstall": "npm run prestart:prod" 
+        "postinstall": "npm run prestart:prod"
     },
     "dependencies": {
         "@google-cloud/firestore": "^3.8.0",
@@ -31,6 +31,7 @@
         "bcrypt": "^4.0.1",
         "class-validator": "^0.12.2",
         "express": "^4.17.1",
+        "heroku": "^7.47.2",
         "mongoose": "^5.9.12",
         "passport": "^0.4.1",
         "passport-jwt": "^4.0.0",
