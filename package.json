@@ -5,7 +5,7 @@
     "description": "Nest TypeScript starter repository",
     "license": "MIT",
     "scripts": {
-        "prebuild": "rimraf dist; git rm yarn.lock; git rm package-lock.json",
+        "prebuild": "rimraf dist; rimraf yarn.lock; rimraf package-lock.json",
         "build": "nest build",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
         "start": "nest start",
