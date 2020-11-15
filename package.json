@@ -5,7 +5,7 @@
     "description": "Nest TypeScript starter repository",
     "license": "MIT",
     "scripts": {
-        "prebuild": "rimraf dist",
+        "prebuild": "rimraf dist; rimraf yarn.lock; rimraf package-lock.json",
         "build": "nest build",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
         "start": "nest start",
@@ -19,7 +19,7 @@
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
         "test:e2e": "jest --config ./test/jest-e2e.json",
-        "postinstall": "npm run prestart:prod" 
+        "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build"
     },
     "dependencies": {
         "@google-cloud/firestore": "^3.8.0",
@@ -29,8 +29,10 @@
         "@nestjs/passport": "^7.0.0",
         "@nestjs/platform-express": "^7.0.11",
         "bcrypt": "^4.0.1",
+        "class-transformer": "^0.3.1",
         "class-validator": "^0.12.2",
         "express": "^4.17.1",
+        "heroku": "^7.47.2",
         "mongoose": "^5.9.12",
         "passport": "^0.4.1",
         "passport-jwt": "^4.0.0",
@@ -84,6 +86,6 @@
     },
     "main": "dist/index.js",
     "engines": {
-        "node": "8"
+        "node": "12.18.4"
     }
 }

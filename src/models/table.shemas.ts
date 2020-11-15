@@ -4,11 +4,11 @@ import * as mongoose from 'mongoose';
 export const TableSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Name required']
+        required: [true, 'El nombre es requerido']
     },
     capacity: {
         type: Number,
-        required: [true, 'Capacity required']
+        required: [true, 'La capacidad es requerida']
     },
     status: {
         type:String,
