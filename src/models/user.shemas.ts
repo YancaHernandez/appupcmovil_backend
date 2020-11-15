@@ -2,9 +2,10 @@ import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
 export const UserSchema = new mongoose.Schema({
-    name:{
+    name: {
         type: String,
-        default: 'Admin'
+        default: 'Admin',
+        required: [true, 'El nombre es requerido']
     },
     email:String,
     password:String,

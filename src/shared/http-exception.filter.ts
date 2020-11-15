@@ -16,15 +16,19 @@ export class HttExceptionFilter implements ExceptionFilter{
         const ctx = host.switchToHttp();
         const response = ctx.getResponse<Response>();
         const request = ctx.getRequest<Request>();
-        const status = exception.errors 
+        const status = exception.errors || exception.response
         ? 400
         : HttpStatus.INTERNAL_SERVER_ERROR;
         
-        const errors = [];
-        for (const key in exception.errors) {
-            if (Object.prototype.hasOwnProperty.call(exception.errors, key)) {
-                const {message} = exception.errors[key];
-                errors.push(message)                
+        let errors = [];
+        if(exception.response){
+            errors = exception.response.error;
+        }else{
+            for (const key in exception.errors) {
+                if (Object.prototype.hasOwnProperty.call(exception.errors, key)) {
+                    const {message} = exception.errors[key];
+                    errors.push(message)                
+                }
             }
         }
 

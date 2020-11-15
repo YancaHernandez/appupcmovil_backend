@@ -1,14 +1,16 @@
-import { Prop } from '@nestjs/mongoose';
+import { IsInt, IsNotEmpty, IsNumber } from 'class-validator';
 export class CreateTableDto {
-    @Prop({ 
-        type: String,
-        required: 'Name is required' 
+    
+    @IsNotEmpty({
+        message:'El nombre es requerido'
     })
     name: string;
 
-    @Prop({ 
-        type: String,
-        required: 'Capacity is required' 
+    @IsNotEmpty({
+        message:'La capacidad es requerida'
+    })
+    @IsInt({
+        message:'La capacidad debe ser un numero'
     })
     capacity: number;
     status: string; //Activa,Inactiva,Anulada,En Uso
