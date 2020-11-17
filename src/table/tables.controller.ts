@@ -1,7 +1,6 @@
 import { Controller, Get, Post, Body, Delete, Param, Put, UseFilters } from '@nestjs/common';
 import { TablesService } from './tables.service';
 import { CreateTableDto as CreateDto,UpdateTableDto as UpdateDto } from './table.dto';
-import { HttExceptionFilter } from 'src/shared/http-exception.filter';
 
 
 @Controller('Tables')
